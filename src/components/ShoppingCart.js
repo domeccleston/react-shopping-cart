@@ -6,15 +6,15 @@ import Item from './ShoppingCartItem';
 
 const ShoppingCart = () => {
 
-	const { cart, removeItem } = useContext(CartContext);	
+	const { cart, localCart, removeItem } = useContext(CartContext);	
 	const getCartTotal = () => {
-		return cart.reduce((acc, value) => {
+		return localCart.reduce((acc, value) => {
 			return acc + value.price;
 		}, 0).toFixed(2);
 	};
 	return (
 		<div className="shopping-cart">
-			{cart.map(item => (
+			{localCart.map(item => (
 				<Item removeItem={removeItem} key={item.id} {...item} />
 			))}
 
