@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from "../contexts/ProductContext";
+import uuid from 'uuid';
 
 // Components
 import Product from './Product';

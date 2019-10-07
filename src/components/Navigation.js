@@ -5,11 +5,15 @@ import { CartContext } from "../contexts/CartContext";
 const Navigation = () => {
 
 	const { cart } = useContext(CartContext);
+	const { localCart } = useContext(CartContext);
+
+	console.log(localCart)
+
 	return (
 		<div className="navigation">
 			<NavLink to="/">Products</NavLink>
 			<NavLink to="/cart">
-				Cart <span>{cart.length}</span>
+				Cart <span>{localCart.length}</span>
 			</NavLink>
 		</div>
 	);
